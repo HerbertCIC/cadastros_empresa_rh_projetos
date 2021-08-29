@@ -1,0 +1,27 @@
+<p>
+  <strong>Description:</strong>
+  <%= @human_resource.description %>
+</p>
+
+<p>
+  <strong>Cpf:</strong>
+  <%= @human_resource.cpf %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @human_resource.email %>
+</p>
+
+<p>
+  <strong>Phone number:</strong>
+  <%= @human_resource.phone_number %>
+</p>
+
+<p>
+  <strong>Company:</strong>
+  <%= @human_resource.company.description %>
+</p>
+
+<%= link_to "Edit", edit_human_resource_path(@human_resource), class: "btn btn-primary btn-sm" %> |
+<%= link_to "Back", human_resources_path, class: "btn btn-secondary btn-sm" %>

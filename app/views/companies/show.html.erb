@@ -1,0 +1,21 @@
+<p>
+  <strong>Description:</strong>
+  <%= @company.description %>
+</p>
+
+<p>
+  <strong>Cnpj:</strong>
+  <%= @company.cnpj %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @company.email %>
+</p>
+
+<%= render "projects", projects: @projects_for_company %>         
+<%= render "human_resources", human_resources: @human_resources_for_company %>         
+
+
+<%= link_to "Edit", edit_company_path(@company), class: "btn btn-primary btn-sm" %> |
+<%= link_to "Back", companies_path, class: "btn btn-secondary btn-sm" %>

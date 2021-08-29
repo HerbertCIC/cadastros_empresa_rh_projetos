@@ -1,0 +1,25 @@
+<table class="table table-hover mb-7">
+    <p>
+    <strong>RH's:</strong>
+    </p>
+  <thead>
+    <tr>
+      <th><%= "Nome" %></th>
+      <th><%= "CPF" %></th>
+      <th><%= "Email" %></th>
+      <th><%= "Telefone" %></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% human_resources.each do |human_resource| %>
+      <tr>
+        <td><%= human_resource.description %></td>
+        <td><%= human_resource.cpf %></td>
+        <td><%= human_resource.email %></td>
+        <td><%= human_resource.phone_number %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

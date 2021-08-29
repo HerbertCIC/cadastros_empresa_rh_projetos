@@ -1,0 +1,34 @@
+'pt-BR':
+  activerecord:
+    models:
+      company: Empresas
+      human_resource: RHs
+      project: Projetos
+    attributes:
+      company:
+        id: "Código"
+        description: "Nome"
+        cnpj: "CNPJ"
+        email: "Email"
+        updated_at: "Atualizado em"
+        created_at: "Criado em"
+      human_resource:
+        id: "Código"
+        description: "Nome"
+        cpf: "CPF"
+        email: "Email"
+        phone_number: "Telefone"
+        company: "Empresa"
+        company_id: "Código da empresa"
+        updated_at: "Atualizado em"
+        created_at: "Criado em"
+      project:
+        id: "Código"
+        description: "Nome"
+        value: "Valor (R$)"
+        company: "Empresa"
+        company_id: "Código da empresa"
+        updated_at: "Atualizado em"
+        created_at: "Criado em"
+      # will translate User attribute "login" as "Handle"
+  

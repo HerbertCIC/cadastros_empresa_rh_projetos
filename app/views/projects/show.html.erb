@@ -1,0 +1,22 @@
+<p>
+  <strong>Nome:</strong>
+  <%= @project.description %>
+</p>
+
+<p>
+  <strong>Valor:</strong>
+  <%= @project.value %>
+</p>
+
+<p>
+  <strong>Empresa:</strong>
+  <%= @project.company.description %>
+</p>
+
+<p>
+  <strong>Data de criação:</strong>
+  <%= @project.created_at %>
+</p>
+
+<%= link_to "Edit", edit_project_path(@project), class: "btn btn-primary btn-sm" %> |
+<%= link_to "Back", projects_path, class: "btn btn-secondary btn-sm" %>

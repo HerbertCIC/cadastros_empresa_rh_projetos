@@ -1,0 +1,21 @@
+<table class="table table-hover">
+    <p>
+    <strong>Projetos:</strong>
+    </p>
+  <thead>
+    <tr>
+      <th><%= "Nome" %></th>
+      <th><%= "Valor" %></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% projects.each do |project| %>
+      <tr>
+        <td><%= project.description %></td>
+        <td ><%= project.value %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

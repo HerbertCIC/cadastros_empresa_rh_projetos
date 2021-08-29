@@ -1,0 +1,28 @@
+<h1><%= Project.model_name.human %></h1>
+<div class="mb-3 text-end"><%= link_to t("links.new"), new_project_path, class: "btn btn-success" %></div>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th><%= @projects.human_attribute_name(:description) %></th>
+      <th><%= @projects.human_attribute_name(:value) %></th>
+      <th><%= @projects.human_attribute_name(:company) %></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @projects.each do |project| %>
+      <tr>
+        <td><%= project.description %></td>
+        <td><%= project.value %></td>
+        <td><%= project.company.description %></td>
+        <td><%= link_to t("links.show"), project, class: "btn btn-sm btn-secondary" %></td>
+        <td><%= link_to t("links.edit"), edit_project_path(project), class: "btn btn-sm btn-primary" %></td>
+        <td><%= link_to t("links.destroy"), project, method: :delete, class: "btn btn-sm  btn-danger", data: { confirm: t("messages.confirm") } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
