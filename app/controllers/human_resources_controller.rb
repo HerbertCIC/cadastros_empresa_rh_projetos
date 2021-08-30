@@ -1,3 +1,4 @@
+require 'csv'
 class HumanResourcesController < ApplicationController
   before_action :set_human_resource, only: %i[ show edit update destroy ]
   before_action :set_company_options, only: %i[new create edit update]
