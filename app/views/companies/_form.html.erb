@@ -9,12 +9,12 @@
     <%= form.text_field :cnpj, class: "form-control", placeholder: "00.000.000/0000-00" %>
   </div>
 
-  <div class="mb-3 mb-3 col-md-8 col-sm-5">
+  <div class="mb-5 mb-3 col-md-8 col-sm-5">
     <%= form.label :email %>
     <%= form.text_field :email, class: "form-control", placeholder: "example@domain.com" %>
   </div>
 
-  <div class="mb-3 text-end">
-    <%= form.submit nil, class: "btn btn-success" %>
+  <div class=" mb-3">
+    <%= form.submit nil, class: "btn btn-success", data: { disable_with: "Salvando..." } %>
   </div>
 <% end %>

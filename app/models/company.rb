@@ -1,6 +1,6 @@
 class Company < ApplicationRecord
-  has_many :hrs
-  has_many :projects
+  has_many :human_resources, dependent: :destroy
+  has_many :projects, dependent: :destroy
 
   validates :description, presence: true
   validates_cnpj :cnpj

@@ -1,34 +1,39 @@
-<div class="d-flex mb-3 px-3">
-  <div class="col-10">
-    <h1><%= Project.model_name.human %></h1>
+<div class="row mb-3">
+  <div class="col-9">
+    <h1 class='display-5'>Projetos</h1>
   </div>
-  <div class="col-2 text-center">
+  <div class="col-3 mt-4 text-center">
     <%= link_to t("links.new"), new_project_path, class: "btn btn-success text-center m-2" %>
+    <%= link_to "Exportar CSV", export_csv_projects_path, class: "btn btn-light border shadow-sm text-center m-2" %>
   </div>
 </div>
 
-<table class="table table-hover border">
-  <thead class="table-secondary">
-    <tr>
-      <th><%= @projects.human_attribute_name(:description) %></th>
-      <th><%= @projects.human_attribute_name(:value) %></th>
-      <th><%= @projects.human_attribute_name(:company) %></th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @projects.each do |project| %>
+<% if @projects.any? %>
+  <table class="table table-striped table-hover border">
+    <thead>
       <tr>
-        <td><%= project.description %></td>
-        <td><%= project.value %></td>
-        <td><%= project.company.description %></td>
-        <td><%= link_to t("links.show"), project, class: "btn btn-sm btn-secondary" %></td>
-        <td><%= link_to t("links.edit"), edit_project_path(project), class: "btn btn-sm btn-primary" %></td>
-        <td><%= link_to t("links.destroy"), project, method: :delete, class: "btn btn-sm  btn-danger", data: { confirm: t("messages.confirm") } %></td>
+        <th><%= @projects.human_attribute_name(:description) %></th>
+        <th><%= @projects.human_attribute_name(:value) %></th>
+        <th><%= @projects.human_attribute_name(:company) %></th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @projects.each do |project| %>
+        <tr>
+          <td><%= project.description %></td>
+          <td><%= project.value %></td>
+          <td><%= project.company.description %></td>
+          <td><%= link_to t("links.show"), project, class: "link-secondary" %></td>
+          <td><%= link_to t("links.edit"), edit_project_path(project), class: "link-secondary" %></td>
+          <td><%= link_to t("links.destroy"), project, method: :delete, class: "link-secondary", data: { confirm: t("messages.confirm") } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p> Nenhum projeto foi cadastrado ainda. <p>
+<% end %>
 
 

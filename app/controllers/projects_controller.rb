@@ -3,7 +3,7 @@ class ProjectsController < ApplicationController
   before_action :set_company_options, only: %i[new create edit update]
 
   def index
-    @projects = Project.all
+    @projects = Project.order(updated_at: :desc)
   end
 
   def show
@@ -20,7 +20,7 @@ class ProjectsController < ApplicationController
     @project = Project.new(project_params)
 
     if @project.save
-      redirect_to @project, notice: "Cadastrado realizado com sucesso."
+      redirect_to @project, notice: "O Cadastrado foi realizado com sucesso."
     else
       flash.now[:alert] = @project.errors.full_messages.to_sentence
       render :new
@@ -29,7 +29,7 @@ class ProjectsController < ApplicationController
 
   def update
     if @project.update(project_params)
-      redirect_to @project, notice: "Atualização foi bem-sucessida."
+      redirect_to @project, notice: "A atualização foi bem-sucessida."
     else
       flash.now[:alert] = @project.errors.full_messages.to_sentence
       render :edit
@@ -38,7 +38,25 @@ class ProjectsController < ApplicationController
 
   def destroy
     @project.destroy
-    redirect_to projects_url, notice: "Remoção foi realizada com sucesso."
+    redirect_to projects_url, notice: "A remoção foi realizada com sucesso."
+  end
+
+  def export_csv
+    headers = ["Nome", "Valor(R$)", "Empresa", "Criado em", "Atualizado em"]
+
+    csv = CSV.generate(write_headers: true, headers: headers) do |row|
+      Project.all.each do |project|
+        row << [
+          project.description,
+          project.value,
+          project.company.description,
+          project.created_at,
+          project.updated_at,
+        ]
+      end
+    end
+
+    send_data csv, type: "text/csv; charset=utf-8; header=present", disposition: "attachment; filename=companies.csv"
   end
 
   private

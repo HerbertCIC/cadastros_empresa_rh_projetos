@@ -1,4 +1,4 @@
-<%= link_to image_tag("seta.png", size: "15"), companies_path, class: "btn btn btn-secondary opacity-50 btn-sm mb-3" %>
+<%= link_to image_tag("back.png", size: "15"), companies_path, class: "btn btn btn-secondary opacity-50 btn-sm mb-3" %>
 
 <p>
   <strong>Nome:</strong>
@@ -15,11 +15,16 @@
   <%= @company.email %>
 </p>
 
-<%= render "projects", projects: @projects_for_company %>         
-<%= render "human_resources", human_resources: @human_resources_for_company %>         
+<% if @projects_for_company.any? %>
+  <%= render "project", projects: @projects_for_company %>
+<% end %> 
+
+<% if @human_resources_for_company.any? %>        
+  <%= render "human_resource", human_resources: @human_resources_for_company %> 
+<% end %>         
 
 <br>
-<div class="mb-3 text-end">
+<div class="mb-3">
   <%= link_to t("links.edit"), edit_company_path(@company), class: "btn btn-primary" %>
 </div>
 

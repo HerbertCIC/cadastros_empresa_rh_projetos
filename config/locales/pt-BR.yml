@@ -1,11 +1,49 @@
 pt-BR:
   Welcome: "Seja Bem-vindo!"
-  hello: "Olá"
   links:
     edit: "Editar"
-    show: "Detalhes"
+    show: "Detalhar"
     destroy: "Apagar"
     new: "Novo"
     back: "Voltar"
   messages:
     confirm: "Tem certeza?"
+  activerecord:
+    models:
+      company:
+        one: Empresa
+        other: Empresas
+      human_resource:
+        one: RH
+        other: RHs
+      project:
+        one: Projeto
+        other: Projetos
+    attributes:
+      company:
+        id: "Código"
+        description: "Nome"
+        cnpj: "CNPJ"
+        email: "Email"
+        updated_at: "Atualizado em"
+        created_at: "Criado em"
+      human_resource:
+        id: "Código"
+        description: "Nome"
+        cpf: "CPF"
+        email: "Email"
+        phone_number: "Telefone"
+        company: "Empresa"
+        company_id: "Código da empresa"
+        updated_at: "Atualizado em"
+        created_at: "Criado em"
+      project:
+        id: "Código"
+        description: "Nome"
+        value: "Valor (R$)"
+        company: "Empresa"
+        company_id: "Código da empresa"
+        updated_at: "Atualizado em"
+        created_at: "Criado em"
+
+
