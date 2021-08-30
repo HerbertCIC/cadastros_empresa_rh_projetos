@@ -1,10 +1,12 @@
+<%= link_to image_tag("seta.png", size: "15"), companies_path, class: "btn btn btn-secondary opacity-50 btn-sm mb-3" %>
+
 <p>
-  <strong>Description:</strong>
+  <strong>Nome:</strong>
   <%= @company.description %>
 </p>
 
 <p>
-  <strong>Cnpj:</strong>
+  <strong>CNPJ:</strong>
   <%= @company.cnpj %>
 </p>
 
@@ -16,6 +18,8 @@
 <%= render "projects", projects: @projects_for_company %>         
 <%= render "human_resources", human_resources: @human_resources_for_company %>         
 
+<br>
+<div class="mb-3 text-end">
+  <%= link_to t("links.edit"), edit_company_path(@company), class: "btn btn-primary" %>
+</div>
 
-<%= link_to "Edit", edit_company_path(@company), class: "btn btn-primary btn-sm" %> |
-<%= link_to "Back", companies_path, class: "btn btn-secondary btn-sm" %>

@@ -1,15 +1,15 @@
 <%= form_with(model: company) do |form| %>
-  <div class="mb-3">
+  <div class="mb-3 mb-3 col-md-8 col-sm-5">
     <%= form.label :description %>
     <%= form.text_field :description, class: "form-control", placeholder: "Company Name" %>
   </div>
  
-  <div class="mb-3">
+  <div class="mb-3 col-md-3 col-sm-5">
     <%= form.label :cnpj %>
     <%= form.text_field :cnpj, class: "form-control", placeholder: "00.000.000/0000-00" %>
   </div>
 
-  <div class="mb-3">
+  <div class="mb-3 mb-3 col-md-8 col-sm-5">
     <%= form.label :email %>
     <%= form.text_field :email, class: "form-control", placeholder: "example@domain.com" %>
   </div>

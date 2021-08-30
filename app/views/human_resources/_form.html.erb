@@ -1,25 +1,25 @@
 <%= form_with(model: human_resource) do |form| %>
-  <div class="mb-3">
+  <div class="mb-3 mb-3 col-md-8 col-sm-5">
     <%= form.label :description %>
     <%= form.text_field :description, class: "form-control", placeholder: "Employee Name" %>
   </div>
 
-  <div class="mb-3">
+  <div class="mb-3 col-md-3 col-sm-5">
     <%= form.label :cpf %>
     <%= form.text_field :cpf, class: "form-control", placeholder: "000.000.000-00" %>
   </div>
 
-  <div class="mb-3">
+  <div class="mb-3 col-md-8 col-sm-5">
     <%= form.label :email %>
-    <%= form.text_field :email, class: "form-control", placeholder: "example@domain.com" %>
+    <%= form.text_field :email, class: "form-control ", placeholder: "example@domain.com" %>
   </div>
 
-  <div class="mb-3">
+  <div class="mb-3 col-md-3 col-sm-5">
     <%= form.label :phone_number %>
     <%= form.text_field :phone_number, class: "form-control", placeholder: "(00) 90000-0000" %>
   </div>
 
-  <div class="mb-3">
+  <div class="mb-3 col-sm-5">
     <%= form.label :company %>
     <%= form.select("company_id", @company_options, { include_blank: nil }, class: "form-select") %>
   </div>
