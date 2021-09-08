@@ -1,24 +1,36 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
+    <div class="container-fluid px-5">
         <%= link_to image_tag("home.png", size: "25"), root_path, class: "navbar-brand p-1" %>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 col-lg-10">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
                          Cadastros
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                        <li><%= link_to "#{Company.model_name.human}", companies_path, class: "dropdown-item" %></li>
-                        <li><%= link_to "#{HumanResource.model_name.human}", human_resources_path, class: "dropdown-item" %></li>
-                        <li><%= link_to "#{Project.model_name.human}", projects_path, class: "dropdown-item" %></li>
+                        <li><%= link_to "Empresa", companies_path, class: "dropdown-item" %></li>
+                        <li><%= link_to "RH", human_resources_path, class: "dropdown-item" %></li>
+                        <li><%= link_to "Projeto", projects_path, class: "dropdown-item" %></li>
                     </ul>
-                </li>
+                </li>             
 
+            </ul>
+            <ul class="navbar-nav me-auto mb-2  col-1">
+                 <li class="nav-item dropdown">                    
+                    <a class="nav-link dropdown-toggle log-off-btn" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    </a>                    
+                    
+                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarScrollingDropdown">
+                        <li><%= link_to "Editar usuário", edit_user_registration_path, class: "dropdown-item" %></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><%= link_to "Sair", destroy_user_session_path, method: :delete, data: { confirm: "Sua conta será deslogada \nConfirmar?" }, class: "dropdown-item" %></li>
+                    </ul>                    
+                </li>
             </ul>
         </div>
     </div>

@@ -23,7 +23,7 @@ class CompaniesController < ApplicationController
     @company = Company.new(company_params)
 
     if @company.save
-      redirect_to @company, notice: "O cadastrado realizado com sucesso."
+      redirect_to @company, notice: "O cadastrado foi realizado com sucesso."
     else
       flash.now[:alert] = @company.errors.full_messages.to_sentence
       render :new

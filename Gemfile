@@ -25,9 +25,9 @@ gem "jbuilder", "~> 2.7"
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 gem "pry-rails", "~> 0.3.9"
-gem 'rails-i18n', '~> 6.0.0'
-gem 'validates_cpf_cnpj', '~> 0.2.0'
-gem 'email_validator', '~> 2.2', '>= 2.2.3'
+gem "rails-i18n", "~> 6.0.0"
+gem "validates_cpf_cnpj", "~> 0.2.0"
+gem "email_validator", "~> 2.2", ">= 2.2.3"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", ">= 1.4.4", require: false
@@ -58,3 +58,12 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem "devise", "~> 4.8"
+gem "devise-i18n", "~> 1.10"
+
+gem "launchy", "~> 2.5"
+gem "mail", "~> 2.6", ">= 2.6.6"
+gem "rspec", "~> 3.5"
+
+gem "letter_opener", group: :development

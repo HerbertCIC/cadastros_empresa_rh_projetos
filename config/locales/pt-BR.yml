@@ -8,6 +8,7 @@ pt-BR:
     back: "Voltar"
   messages:
     confirm: "Tem certeza?"
+
   activerecord:
     models:
       company:
@@ -19,15 +20,23 @@ pt-BR:
       project:
         one: Projeto
         other: Projetos
+      user: Usuário
+      
     attributes:
+      default: &default
+       created_at: 'Criado em'
+       updated_at: 'Atualizado em'
+
       company:
+        <<: *default
         id: "Código"
         description: "Nome"
         cnpj: "CNPJ"
         email: "Email"
-        updated_at: "Atualizado em"
-        created_at: "Criado em"
+
+
       human_resource:
+        <<: *default
         id: "Código"
         description: "Nome"
         cpf: "CPF"
@@ -35,15 +44,22 @@ pt-BR:
         phone_number: "Telefone"
         company: "Empresa"
         company_id: "Código da empresa"
-        updated_at: "Atualizado em"
-        created_at: "Criado em"
+
       project:
+        <<: *default
         id: "Código"
         description: "Nome"
         value: "Valor (R$)"
         company: "Empresa"
         company_id: "Código da empresa"
-        updated_at: "Atualizado em"
-        created_at: "Criado em"
+
+      user:
+        <<: *default
+        name: 'Nome'
+        username: 'Nome de usuário'
+        email: 'Email'
+        password: 'Senha'
+        password_confirmation: 'Senha (confirmação)'
+
 
 
