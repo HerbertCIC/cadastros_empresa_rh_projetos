@@ -48,7 +48,7 @@ class HumanResourcesController < ApplicationController
     csv = CSV.generate(write_headers: true, headers: headers) do |row|
       HumanResource.all.each do |human_resource|
         row << [
-          human_resource.description,
+          human_resource.name,
           human_resource.cpf,
           human_resource.email,
           human_resource.phone_number,
@@ -64,7 +64,7 @@ class HumanResourcesController < ApplicationController
   private
 
   def set_company_options
-    @company_options = Company.all.pluck(:description, :id)
+    @company_options = Company.all.pluck(:name, :id)
   end
 
   def set_human_resource
@@ -72,6 +72,6 @@ class HumanResourcesController < ApplicationController
   end
 
   def human_resource_params
-    params.require(:human_resource).permit(:description, :cpf, :email, :phone_number, :company_id)
+    params.require(:human_resource).permit(:name, :cpf, :email, :phone_number, :company_id, :age, :schooling_level)
   end
 end

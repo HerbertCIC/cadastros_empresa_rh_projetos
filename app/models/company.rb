@@ -6,4 +6,5 @@ class Company < ApplicationRecord
   validates_cnpj :cnpj
   validates :cnpj, uniqueness: true
   validates :email, email: { allow_blank: true }
+  validates :contact_email, email: { allow_blank: true }
 end

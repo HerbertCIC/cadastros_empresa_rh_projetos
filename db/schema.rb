@@ -10,33 +10,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_07_222547) do
+ActiveRecord::Schema.define(version: 2021_09_08_113348) do
 
   create_table "companies", force: :cascade do |t|
-    t.string "description"
+    t.string "name"
     t.string "cnpj"
     t.string "email"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "contact_name"
+    t.string "contact_email"
   end
 
   create_table "human_resources", force: :cascade do |t|
-    t.string "description"
+    t.string "name"
     t.string "cpf"
     t.string "email"
     t.string "phone_number"
     t.integer "company_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "age"
+    t.string "schooling_level"
     t.index ["company_id"], name: "index_human_resources_on_company_id"
   end
 
   create_table "projects", force: :cascade do |t|
-    t.string "description"
+    t.string "name"
     t.decimal "value", precision: 10, scale: 2
     t.integer "company_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.text "description"
     t.index ["company_id"], name: "index_projects_on_company_id"
   end
 

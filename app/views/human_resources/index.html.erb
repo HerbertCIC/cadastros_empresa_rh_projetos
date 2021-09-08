@@ -12,7 +12,7 @@
   <table class="table table-striped table-hover border">
     <thead>
       <tr>
-        <th><%= @human_resources.human_attribute_name(:description) %></th>
+        <th><%= @human_resources.human_attribute_name(:name) %></th>
         <th><%= @human_resources.human_attribute_name(:cpf) %></th>
         <th><%= @human_resources.human_attribute_name(:email) %></th>
         <th><%= @human_resources.human_attribute_name(:phone_number) %></th>
@@ -24,11 +24,11 @@
     <tbody>
       <% @human_resources.each do |human_resource| %>
         <tr>
-          <td><%= human_resource.description %></td>
+          <td><%= human_resource.name %></td>
           <td><%= human_resource.cpf %></td>
           <td><%= human_resource.email %></td>
           <td><%= human_resource.phone_number %></td>
-          <td><%= human_resource.company.description %></td>
+          <td><%= human_resource.company.name %></td>
           <td><%= link_to t("links.show"), human_resource, class: "link-secondary" %></td>
           <td><%= link_to t("links.edit"), edit_human_resource_path(human_resource), class: "link-secondary" %></td>
           <td><%= link_to t("links.destroy"), human_resource, method: :delete, class: "link-secondary", data: { confirm: t("messages.confirm") } %></td>

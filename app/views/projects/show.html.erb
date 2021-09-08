@@ -2,7 +2,12 @@
 
 <p>
   <strong>Nome:</strong>
-  <%= @project.description %>
+  <%= @project.name %>
+</p>
+
+<p>
+  <strong>Descrição:</strong>
+  <%= sanitize(@project.description.gsub("\n", "<br>")).html_safe %>
 </p>
 
 <p>
@@ -12,7 +17,7 @@
 
 <p>
   <strong>Empresa:</strong>
-  <%= @project.company.description %>
+  <%= @project.company.name %>
 </p>
 
 <p>

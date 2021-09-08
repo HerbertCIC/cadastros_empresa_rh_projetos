@@ -50,9 +50,11 @@ class CompaniesController < ApplicationController
     csv = CSV.generate(write_headers: true, headers: headers) do |row|
       Company.all.each do |company|
         row << [
-          company.description,
+          company.name,
           company.cnpj,
           company.email,
+          company.contact_name,
+          company.contact_email,
           company.created_at,
           company.updated_at,
         ]
@@ -69,6 +71,6 @@ class CompaniesController < ApplicationController
   end
 
   def company_params
-    params.require(:company).permit(:description, :cnpj, :email)
+    params.require(:company).permit(:name, :cnpj, :email, :contact_name, :contact_email)
   end
 end

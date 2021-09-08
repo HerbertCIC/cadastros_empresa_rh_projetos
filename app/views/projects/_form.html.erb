@@ -1,7 +1,7 @@
 <%= form_with(model: project) do |form| %>
   <div class="mb-3 col-md-8 col-sm-5">
-    <%= form.label :description %>
-    <%= form.text_field :description, class: "form-control", placeholder: "Project Name" %>
+    <%= form.label :name %>
+    <%= form.text_field :name, class: "form-control", placeholder: "Project Name" %>
   </div>
 
   <div class="mb-3 col-md-3 col-sm-5">
@@ -9,9 +9,14 @@
     <%= form.text_field :value, class: "form-control", placeholder: "000.00" %>
   </div>
 
-  <div class="mb-5 col-md-3 col-sm-5">
+  <div class="mb-3 col-md-3 col-sm-5">
     <%= form.label :company %>
     <%= form.select("company_id", @company_options, { include_blank: nil }, class: "form-select") %>
+  </div>
+
+  <div class="mb-5 col-md-8 col-sm-5"">
+    <%= form.label :description %>
+    <%= form.text_area :description, class: "form-control", placeholder: "" %>
   </div>
 
   <div class="mb-3">

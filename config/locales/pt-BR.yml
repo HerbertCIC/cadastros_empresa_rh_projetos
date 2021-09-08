@@ -30,25 +30,29 @@ pt-BR:
       company:
         <<: *default
         id: "Código"
-        description: "Nome"
+        name: "Nome"
         cnpj: "CNPJ"
         email: "Email"
+        contact_email: "Email do contato"
+        contact_name: "Nome do contato"
 
 
       human_resource:
         <<: *default
         id: "Código"
-        description: "Nome"
+        name: "Nome"
         cpf: "CPF"
         email: "Email"
         phone_number: "Telefone"
         company: "Empresa"
         company_id: "Código da empresa"
+        age: "Idade"
+        schooling_level: "Escolaridade"
 
       project:
         <<: *default
         id: "Código"
-        description: "Nome"
+        name: "Nome"
         value: "Valor (R$)"
         company: "Empresa"
         company_id: "Código da empresa"

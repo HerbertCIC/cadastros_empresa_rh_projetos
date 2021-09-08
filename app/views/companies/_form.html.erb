@@ -1,7 +1,12 @@
 <%= form_with(model: company) do |form| %>
   <div class="mb-3 mb-3 col-md-8 col-sm-5">
-    <%= form.label :description %>
-    <%= form.text_field :description, class: "form-control", placeholder: "Company Name" %>
+    <%= form.label :name %>
+    <%= form.text_field :name, class: "form-control", placeholder: "Nome da empresa" %>
+  </div>
+
+  <div class="mb-3 mb-3 col-md-8 col-sm-5">
+    <%= form.label :email %>
+    <%= form.text_field :email, class: "form-control", placeholder: "exemplo@email.com" %>
   </div>
  
   <div class="mb-3 col-md-3 col-sm-5">
@@ -9,10 +14,15 @@
     <%= form.text_field :cnpj, class: "form-control", placeholder: "00.000.000/0000-00" %>
   </div>
 
-  <div class="mb-5 mb-3 col-md-8 col-sm-5">
-    <%= form.label :email %>
-    <%= form.text_field :email, class: "form-control", placeholder: "example@domain.com" %>
-  </div>
+  <div class="mb-3 mb-3 col-md-8 col-sm-5">
+    <%= form.label :contact_name %>
+    <%= form.text_field :contact_name, class: "form-control", placeholder: "Nome do contato" %>
+  </div>  
+
+  <div class="mb-3 mb-3 col-md-8 col-sm-5">
+    <%= form.label :contact_email %>
+    <%= form.text_field :contact_email, class: "form-control", placeholder: "exemplo@email.com" %>
+  </div>  
 
   <div class=" mb-3">
     <%= form.submit nil, class: "btn btn-success", data: { disable_with: "Salvando..." } %>

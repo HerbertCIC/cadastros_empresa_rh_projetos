@@ -22,7 +22,7 @@ class ProjectsController < ApplicationController
     @project = Project.new(project_params)
 
     if @project.save
-      redirect_to @project, notice: "O Cadastrado foi realizado com sucesso."
+      redirect_to @project, notice: "O Cadastro foi realizado com sucesso."
     else
       flash.now[:alert] = @project.errors.full_messages.to_sentence
       render :new
@@ -49,9 +49,9 @@ class ProjectsController < ApplicationController
     csv = CSV.generate(write_headers: true, headers: headers) do |row|
       Project.all.each do |project|
         row << [
-          project.description,
+          project.name,
           project.value,
-          project.company.description,
+          project.company.name,
           project.created_at,
           project.updated_at,
         ]
@@ -64,7 +64,7 @@ class ProjectsController < ApplicationController
   private
 
   def set_company_options
-    @company_options = Company.all.pluck(:description, :id)
+    @company_options = Company.all.pluck(:name, :id)
   end
 
   def set_project
@@ -72,6 +72,6 @@ class ProjectsController < ApplicationController
   end
 
   def project_params
-    params.require(:project).permit(:description, :value, :company_id)
+    params.require(:project).permit(:name, :value, :company_id, :description)
   end
 end

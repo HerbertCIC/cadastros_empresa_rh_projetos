@@ -2,7 +2,7 @@
 
 <p>
   <strong>Nome:</strong>
-  <%= @human_resource.description %>
+  <%= @human_resource.name %>
 </p>
 
 <p>
@@ -22,7 +22,17 @@
 
 <p>
   <strong>Empresa:</strong>
-  <%= @human_resource.company.description %>
+  <%= @human_resource.name %>
+</p>
+
+<p>
+  <strong>Idade:</strong>
+  <%= @human_resource.age %>
+</p>
+
+<p>
+  <strong>Escolaridade:</strong>
+  <%= @human_resource.schooling_level %>
 </p>
 
 
