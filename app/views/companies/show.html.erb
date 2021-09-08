@@ -27,12 +27,12 @@
 
 
 
-<% if @projects_for_company.any? %>
-  <%= render "project", projects: @projects_for_company %>
+<% if @projects.any? %>
+  <%= render "project", projects: @projects %>
 <% end %> 
 
-<% if @human_resources_for_company.any? %>        
-  <%= render "human_resource", human_resources: @human_resources_for_company %> 
+<% if @human_resources.any? %>        
+  <%= render "human_resource", human_resources: @human_resources %> 
 <% end %>         
 
 <br>

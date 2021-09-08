@@ -8,8 +8,8 @@ class CompaniesController < ApplicationController
   end
 
   def show
-    @projects_for_company = Project.where("company_id = ?", params[:id])
-    @human_resources_for_company = HumanResource.where("company_id = ?", params[:id])
+    @projects = @company.projects.order(created_at: :desc)
+    @human_resources = @company.human_resources.order(created_at: :desc)
   end
 
   def new
