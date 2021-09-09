@@ -31,7 +31,7 @@
 
     <div class="mb-5 col-md-3 col-sm-5">
     <%= form.label :schooling_level %>
-    <%= form.text_field :schooling_level, class: "form-control", placeholder: "Escolaridade" %>
+    <%= form.select :schooling_level, ["Ensino superior completo", "Ensino superior incompleto", "Ensino Médio completo", "Ensino Médio incompleto"], { include_blank: "Sem escolaridade" }, class: "form-select", placeholder: "Escolaridade" %>
   </div>
 
 

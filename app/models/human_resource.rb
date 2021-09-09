@@ -1,7 +1,7 @@
 class HumanResource < ApplicationRecord
   belongs_to :company
 
-  validates :description, presence: true
+  validates :name, presence: true
   validates_cpf :cpf
   validates :cpf, uniqueness: true
   validates :email, email: { allow_blank: true }

@@ -7,7 +7,9 @@ class ApplicationController < ActionController::Base
   private
 
   def layout_by_resource
-    "authentication" if devise_controller?
+    if devise_controller?
+      "authentication" unless signed_in?
+    end
   end
 
   def configure_permitted_parameters

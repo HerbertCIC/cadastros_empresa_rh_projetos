@@ -7,3 +7,9 @@ h1, h2, h3, h4{
 .info {
     font-size: 13px;
 }
+
+@media(max-width: 1000px){
+    .info {
+        font-size: 10px;
+    }
+}

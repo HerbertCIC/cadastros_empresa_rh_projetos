@@ -1,14 +1,16 @@
-<h4 class="mb-5 text-center">Esqueceu a senha?</h4>
+<section>
+  <h4 class="mb-5 text-center">Esqueceu a senha?</h4>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
 
-  <div class="mb-3">
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "email cadastrado" %>
-  </div>
+    <div class="mb-3 text-center">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "email cadastrado" %>
+    </div>
 
-  <div class="actions mb-5 text-center">
-    <%= f.submit "Envie-me instruções para redefinir a senha", class: "btn btn-outline-secondary info" %>
-  </div>
-<% end %>
+    <div class="actions mb-5 text-center">
+      <%= f.submit "Envie-me instruções para redefinir a senha", class: "btn btn-outline-secondary info" %>
+    </div>
+  <% end %>
 
- <div class="mb-3 text-center"><%= render "devise/shared/links" %></div>
+  <div class="mb-3 text-center"><%= render "devise/shared/links" %></div>
+</section>

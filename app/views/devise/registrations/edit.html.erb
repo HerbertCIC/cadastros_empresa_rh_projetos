@@ -1,5 +1,5 @@
-<div class="text-center" ><%= link_to image_tag("back.png", size: "15"), root_path, class: "btn btn btn-secondary opacity-50 btn-sm mb-3" %></div>
-<h2 class="text-center">Editar Usuário</h2>
+<div><%= link_to image_tag("back.png", size: "15"), root_path, class: "btn btn btn-secondary opacity-50 btn-sm mb-3" %></div>
+<h2 class="text-center">Editar Usuário</h2></br>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
 
@@ -20,31 +20,31 @@
   <% end %>
 
   <div class="mb-3">
-    <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: "Senha" %>
     <% if @minimum_password_length %>
       <em>mínimo de <%= @minimum_password_length %> caracteres</em>
     <% end %>
     <i>(deixe em branco caso não queira alterar)<i>
+    <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: "Senha" %>
   </div>
 
   <div class="mb-3">
     <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", placeholder: "Senha (confirmação)" %>
   </div>
 
-  <div class="mb-3">
-    <%= f.password_field :current_password, autocomplete: "current-password", class: "form-control", placeholder: "Senha atual" %>
+  <div class="mb-5">
     <i>(digite a senha atual para confirmar as alterações)</i>
+    <%= f.password_field :current_password, autocomplete: "current-password", class: "form-control", placeholder: "Senha atual" %>
   </div>
 
-  <div class="actions mb-5 text-center">
-    <%= f.submit "Atualizar", class: "btn btn-outline-success text-center" %>
+  <div class="actions mb-5 container">
+    <%= f.submit "Atualizar", class: "btn btn-success text-center" %>
   </div>
 <% end %>
 
 <h4 class="text-center">Cancelar conta</h4>
 
 <div class="mb-3 text-center">
-<%= button_to "Cancelar", registration_path(resource_name), data: { confirm: "Tem certeza?" }, method: :delete, class: "btn btn-outline-danger" %></p>
+<%= button_to "Cancelar", registration_path(resource_name), data: { confirm: "Tem certeza?" }, method: :delete, class: "btn btn-danger" %></p>
 </div>
 
 
