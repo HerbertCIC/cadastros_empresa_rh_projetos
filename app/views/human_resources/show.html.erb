@@ -22,7 +22,7 @@
 
 <p>
   <strong>Empresa:</strong>
-  <%= @human_resource.name %>
+  <%= @human_resource.company.name %>
 </p>
 
 <p>
@@ -37,7 +37,7 @@
 
 
 <br>
-<div class=" mb-3">
+<div class="mb-5 p-3">
   <%= link_to t("links.edit"), edit_human_resource_path(@human_resource), class: "btn btn-primary text-end" %>
 </div>
 

@@ -3,8 +3,8 @@
     <h1 class='display-5'>Recursos Humanos</h1>
   </div>
   <div class="col-3 mt-4 text-center">
-    <%= link_to t("links.new"), new_human_resource_path, class: "btn btn-success text-center m-2" %>
-    <%= link_to "Exportar CSV", export_csv_human_resources_path, class: "btn btn-light border shadow-sm text-center m-2" %>
+    <%= link_to t("links.new"), new_human_resource_path, class: "btn btn-primary text-center m-2" %>
+    <%= link_to "Exportar CSV", export_csv_human_resources_path, class: "btn btn-success border shadow-sm text-center m-2" %>
   </div>
 </div>
 
@@ -17,7 +17,7 @@
         <th><%= @human_resources.human_attribute_name(:email) %></th>
         <th><%= @human_resources.human_attribute_name(:phone_number) %></th>
         <th><%= @human_resources.human_attribute_name(:company) %></th>
-        <th colspan="3"></th>
+        <th colspan="4"></th>
       </tr>
     </thead>
 
@@ -29,6 +29,7 @@
           <td><%= human_resource.email %></td>
           <td><%= human_resource.phone_number %></td>
           <td><%= human_resource.company.name %></td>
+          <td><%= link_to image_tag("pdf.png"), human_resource_path(human_resource, format: :pdf) %></td>
           <td><%= link_to t("links.show"), human_resource, class: "link-secondary" %></td>
           <td><%= link_to t("links.edit"), edit_human_resource_path(human_resource), class: "link-secondary" %></td>
           <td><%= link_to t("links.destroy"), human_resource, method: :delete, class: "link-secondary", data: { confirm: t("messages.confirm") } %></td>

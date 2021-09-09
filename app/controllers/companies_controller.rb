@@ -10,6 +10,12 @@ class CompaniesController < ApplicationController
   def show
     @projects = @company.projects.order(created_at: :desc)
     @human_resources = @company.human_resources.order(created_at: :desc)
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "Company id: #{@company.id}", template: "companies/show.html.erb"   # Excluding ".pdf" extension.
+      end
+    end
   end
 
   def new

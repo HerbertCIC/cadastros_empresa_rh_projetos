@@ -62,8 +62,10 @@ gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "devise", "~> 4.8"
 gem "devise-i18n", "~> 1.10"
 
-gem "launchy", "~> 2.5"
-gem "mail", "~> 2.6", ">= 2.6.6"
-gem "rspec", "~> 3.5"
-
+# Gem para enviar emails localmente
 gem "letter_opener", group: :development
+
+# Gem para gerar os pdfs
+gem "wicked_pdf"
+
+gem "wkhtmltopdf-binary"

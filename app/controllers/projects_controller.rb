@@ -9,6 +9,12 @@ class ProjectsController < ApplicationController
   end
 
   def show
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "RH id: #{@project.id}", template: "projects/show.html.erb"   # Excluding ".pdf" extension.
+      end
+    end
   end
 
   def new

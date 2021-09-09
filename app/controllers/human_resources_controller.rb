@@ -1,4 +1,5 @@
-require 'csv'
+require "csv"
+
 class HumanResourcesController < ApplicationController
   before_action :set_human_resource, only: %i[ show edit update destroy ]
   before_action :set_company_options, only: %i[new create edit update]
@@ -8,6 +9,12 @@ class HumanResourcesController < ApplicationController
   end
 
   def show
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "RH id: #{@human_resource.id}", template: "human_resources/show.html.erb"   # Excluding ".pdf" extension.
+      end
+    end
   end
 
   def new

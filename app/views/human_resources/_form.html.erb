@@ -29,13 +29,13 @@
     <%= form.text_field :age, class: "form-control", placeholder: "Idade" %>
   </div>
 
-    <div class="mb-5 col-md-3 col-sm-5">
+  <div class="mb-5 col-md-3 col-sm-5">
     <%= form.label :schooling_level %>
     <%= form.select :schooling_level, ["Ensino superior completo", "Ensino superior incompleto", "Ensino Médio completo", "Ensino Médio incompleto"], { include_blank: "Sem escolaridade" }, class: "form-select", placeholder: "Escolaridade" %>
   </div>
 
 
-  <div class=" mb-3">
+  <div class="mb-5 p-3">
     <%= form.submit nil, class: "btn btn-success", data: { disable_with: "Salvando..." } %>
   </div>
 <% end %>

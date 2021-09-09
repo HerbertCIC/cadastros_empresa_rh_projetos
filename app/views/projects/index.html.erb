@@ -3,8 +3,8 @@
     <h1 class='display-5'>Projetos</h1>
   </div>
   <div class="col-3 mt-4 text-center">
-    <%= link_to t("links.new"), new_project_path, class: "btn btn-success text-center m-2" %>
-    <%= link_to "Exportar CSV", export_csv_projects_path, class: "btn btn-light border shadow-sm text-center m-2" %>
+    <%= link_to t("links.new"), new_project_path, class: "btn btn-primary text-center m-2" %>
+    <%= link_to "Exportar CSV", export_csv_projects_path, class: "btn btn-success border shadow-sm text-center m-2" %>
   </div>
 </div>
 
@@ -15,7 +15,7 @@
         <th><%= @projects.human_attribute_name(:name) %></th>
         <th><%= @projects.human_attribute_name(:value) %></th>
         <th><%= @projects.human_attribute_name(:company) %></th>
-        <th colspan="3"></th>
+        <th colspan="4"></th>
       </tr>
     </thead>
 
@@ -25,6 +25,7 @@
           <td><%= project.name %></td>
           <td><%= project.value %></td>
           <td><%= project.company.name %></td>
+          <td><%= link_to image_tag("pdf.png"), project_path(project, format: :pdf) %></td>
           <td><%= link_to t("links.show"), project, class: "link-secondary" %></td>
           <td><%= link_to t("links.edit"), edit_project_path(project), class: "link-secondary" %></td>
           <td><%= link_to t("links.destroy"), project, method: :delete, class: "link-secondary", data: { confirm: t("messages.confirm") } %></td>

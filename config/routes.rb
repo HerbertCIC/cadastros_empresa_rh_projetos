@@ -7,7 +7,13 @@ Rails.application.routes.draw do
     collection do
       get :export_csv
     end
+    member do
+      # /agreements/:id/export
+      get 'export'
+    end
   end
+
+  get '/company_export' => 'company#export'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
