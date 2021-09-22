@@ -1,8 +1,4 @@
-<h2 class="text-center">Cadastrar-se</h2></br>
-
-
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= form_with(model: user) do |f| %>
   <div class="mb-3">
     <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "form-control", placeholder: "Nome" %>
   </div>
@@ -19,7 +15,7 @@
     <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: "Senha" %>
     <% if @minimum_password_length %>
     <em>(mínimo de <%= @minimum_password_length %> caracteres)</em>
-    <% end %></br>
+    <% end %>
   </div>
 
   <div class="mb-3">
@@ -30,5 +26,3 @@
     <%= f.submit "Cadastrar", class: "btn btn-outline-success" %>
   </div>
 <% end %>
-
-<div class="mb-3 text-center"> Já é cadastrado? <%= render "devise/shared/links" %></div>

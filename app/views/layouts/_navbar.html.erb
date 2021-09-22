@@ -16,6 +16,7 @@
                         <li><%= link_to "Empresa", companies_path, class: "dropdown-item" %></li>
                         <li><%= link_to "RH", human_resources_path, class: "dropdown-item" %></li>
                         <li><%= link_to "Projeto", projects_path, class: "dropdown-item" %></li>
+                        <li><%= link_to "Usuários", users_path, class: "dropdown-item" %></li>
                     </ul>
                 </li>             
 
@@ -29,8 +30,11 @@
                         <li><%= link_to "Editar usuário", edit_user_registration_path, class: "dropdown-item" %></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><%= link_to "Sair", destroy_user_session_path, method: :delete, data: { confirm: "Sua conta será deslogada \nConfirmar?" }, class: "dropdown-item" %></li>
-                    </ul>                    
+                    </ul>
+
+                                      
                 </li>
+                
             </ul>
         </div>
     </div>

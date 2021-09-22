@@ -1,0 +1,31 @@
+<div class="row mb-3">
+  <div class="col-9">
+    <h1 class='display-5'>Usuários</h1>
+  </div>
+  <div class="col-3 mt-4 text-center">
+    <%= link_to t("links.new"), new_user_path, class: "btn btn-primary text-center m-2" %>
+  </div>
+</div>
+
+<table class="table table-striped table-hover border">
+
+<thead>
+    <tr>
+        <th>#</th>
+        <th>Nome</th>
+         <th colspan="4"></th>
+    </tr>
+</thead>
+
+<tbody>
+    <% @users.each do |user| %>
+    <tr>
+        <td><%= user.id %></td>
+        <td class="col-8"><%= user.name %></td>
+        <td><%= link_to t("links.show"), user, class: "link-secondary" %></td>  
+        <td><%= link_to t("links.edit"), edit_user_path(user), class: "link-secondary" %></td>
+        <td><%= link_to t("links.destroy"), user, method: :delete, class: "link-secondary", data: { confirm: t("messages.confirm") } %></td>     
+    </tr>
+    <% end %>
+</tbody>
+</table> 
